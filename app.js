@@ -27,7 +27,7 @@ function converToWorld(letter) {
 function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
-    result_p.innerHTML = `${converToWorld(userChoice)}  beats  ${converToWorld(computerChoice)}. You Win!`;
+    result_p.innerHTML = `${converToWorld(userChoice)}  jbeats  ${converToWorld(computerChoice)}. You Win!`;
 
 
 }
