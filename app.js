@@ -25,27 +25,32 @@ function converToWorld(letter) {
 }
 
 function win(userChoice, computerChoice) {
+    const userChoice_div = document.getElementById(userChoice);
     userScore++;
     userScore_span.innerHTML = userScore;
-    result_p.innerHTML = `${converToWorld(userChoice)}  jbeats  ${converToWorld(computerChoice)}. You Win!`;
-
-
+    result_p.innerHTML = `${converToWorld(userChoice)}  beats  ${converToWorld(computerChoice)}. You Win!`;
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function() { userChoice_div.classList.remove('green-glow') }, 800);
 }
 
 
 function lose(userChoice, computerChoice) {
+    const userChoice_div = document.getElementById(userChoice);
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = result_p.innerHTML = `${converToWorld(userChoice)}  loses to  ${converToWorld(computerChoice)}. You Lose!`;
-
+    userChoice_div.classList.add('red-glow');
+    setTimeout(function() { userChoice_div.classList.remove('red-glow') }, 800);
 }
 
 function draw(userChoice, computerChoice) {
+    const userChoice_div = document.getElementById(userChoice);
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = result_p.innerHTML = `${converToWorld(userChoice)}  &  ${converToWorld(computerChoice)}. Hit a stalemate!`;
-
+    userChoice_div.classList.add('gray-glow');
+    setTimeout(function() { userChoice_div.classList.remove('gray-glow') }, 800);
 }
 
 function game(userChoice) {
